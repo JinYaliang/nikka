@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"mybatis-3-config.dtd" >
+<configuration>
+	<settings>
+		<!--1.驼峰命名规则 -->
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+	
+	<typeAliases>
+		<package name="com.wang.ssm.bean"/>
+	</typeAliases>
+	<!--2.配置分页插件，此插件必须配置在typeAliases后面-->
+	<plugins>
+		<plugin interceptor="com.github.pagehelper.PageInterceptor">
+			<!--配置一下参数的作用：如果pagenum<=0时查询第一页，如果pagenum>总页数查询末页-->
+			<property name="reasonable" value="true"/>
+		</plugin>
+	</plugins>
+	
+</configuration>
